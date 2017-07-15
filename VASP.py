@@ -127,6 +127,7 @@ def write_poscar(file_name, lattice, basis, elements, num_atoms, selectiveflag, 
 
 
 def dirkar(basis, coordinates):
+    # can be re-write with Numpy module
     for i in xrange(0, len(coordinates)):
         v1 = coordinates[i][0] * basis[0][0] + coordinates[i][1] * basis[1][0] + coordinates[i][2] * basis[2][0]
         v2 = coordinates[i][0] * basis[0][1] + coordinates[i][1] * basis[1][1] + coordinates[i][2] * basis[2][1]
@@ -138,6 +139,7 @@ def dirkar(basis, coordinates):
 
 
 def kardir(basis, coordinates):
+    # can be re-write with Numpy module
     inverse = [[basis[1][1]*basis[2][2]-basis[2][1]*basis[1][2], basis[2][1]*basis[0][2]-basis[0][1]*basis[2][2], basis[0][1]*basis[1][2]-basis[1][1]*basis[0][2]],
                [basis[2][0]*basis[1][2]-basis[1][0]*basis[2][2], basis[0][0]*basis[2][2]-basis[2][0]*basis[0][2], basis[1][0]*basis[0][2]-basis[0][0]*basis[1][2]],
                [basis[1][0]*basis[2][1]-basis[2][0]*basis[1][1], basis[2][0]*basis[0][1]-basis[0][0]*basis[2][1], basis[0][0]*basis[1][1]-basis[1][0]*basis[0][1]]]
